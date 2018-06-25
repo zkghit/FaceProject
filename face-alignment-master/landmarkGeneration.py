@@ -22,3 +22,5 @@ if __name__ == "__main__":
 			nameJ = file.replace('.npy','.jpg')
 			io.imsave(nameJ, input)
 
+# sio.savemat('small.mat',{preds})
+# data = np.load('test.npy')

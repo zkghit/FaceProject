@@ -7,7 +7,7 @@ import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--cuda', type = bool, default=True)
-parser.add_argument('--load_dir', type = str, default='../Facephoto/')
+parser.add_argument('--load_dir', type = str, default='crop_output2/')
 opt = parser.parse_args()
 
 if __name__ == "__main__":
@@ -20,7 +20,8 @@ if __name__ == "__main__":
 			name = file.replace('.jpg','.npy')
 			np.save(name, preds[0])
 			nameJ = file.replace('.npy','.jpg')
-			io.imsave(nameJ, input)
+			nameJ2 = os.path.join('landmark', nameJ)
+			io.imsave(nameJ2, input)
 
 # sio.savemat('small.mat',{preds})
 # data = np.load('test.npy')

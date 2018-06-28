@@ -7,7 +7,7 @@ import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--cuda', type = bool, default=True)
-parser.add_argument('--load_dir', type = str, default='crop_output2/')
+parser.add_argument('--load_dir', type = str, default='crop_output2/img/')
 opt = parser.parse_args()
 
 if __name__ == "__main__":
@@ -18,10 +18,11 @@ if __name__ == "__main__":
 			# imResize = resize(input,(200,200))
 			preds = fa.get_landmarks(input)
 			name = file.replace('.jpg','.npy')
-			np.save(name, preds[0])
+			# np.save(name, preds[0])
 			nameJ = file.replace('.npy','.jpg')
-			nameJ2 = os.path.join('landmark', nameJ)
-			io.imsave(nameJ2, input)
+			nameJ2 = os.path.join('landmark', name)
+			np.save(nameJ2, preds[0])
+			# io.imsave(nameJ2, input)
 
 # sio.savemat('small.mat',{preds})
 # data = np.load('test.npy')

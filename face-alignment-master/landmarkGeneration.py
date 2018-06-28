@@ -6,7 +6,7 @@ import os
 import numpy as np
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--cuda', type = bool, default=False)
+parser.add_argument('--cuda', type = bool, default=True)
 parser.add_argument('--load_dir', type = str, default='../Facephoto/')
 opt = parser.parse_args()
 
